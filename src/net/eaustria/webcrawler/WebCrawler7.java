@@ -24,7 +24,8 @@ public class WebCrawler7 implements ILinkHandler {
 
     public WebCrawler7(String startingURL, int maxThreads) {
         this.url = startingURL;
-        // ToDo: Initialize "mainPool"        
+        // ToDo: Initialize "mainPool"    
+        
     }
 
     private void startCrawling() {
