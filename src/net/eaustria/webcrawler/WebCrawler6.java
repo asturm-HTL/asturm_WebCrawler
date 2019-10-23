@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import static java.util.concurrent.Executors.newFixedThreadPool;
 
 /**
  *
@@ -24,7 +25,8 @@ public class WebCrawler6 implements ILinkHandler {
 
     public WebCrawler6(String startingURL, int maxThreads) {
         this.url = startingURL;
-        // ToDo: Register a ThreadPool with "maxThreads" for execService
+            // ToDo: Register a ThreadPool with "maxThreads" for execService
+        execService = newFixedThreadPool(maxThreads);
         
     }
 
@@ -50,7 +52,7 @@ public class WebCrawler6 implements ILinkHandler {
 
     private void startNewThread(String link) throws Exception {
         // ToDo: Use executer Service to start new LinkFinder Task!
-        
+        execService.submit(new LinkFinder(url, this));
     }
 
     private void startCrawling() throws Exception {        

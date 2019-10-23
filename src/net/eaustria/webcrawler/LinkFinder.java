@@ -26,16 +26,21 @@ public class LinkFinder implements Runnable {
      */
     private static final long t0 = System.nanoTime();
 
-    public LinkFinder(String url, ILinkHandler handler) {
-        //ToDo: Implement Constructor
+    public LinkFinder(String url, ILinkHandler handler) 
+    {
+            //ToDo: Implement Constructor
+        this.url = url;
+        this.linkHandler = handler;
     }
 
     @Override
-    public void run() {
+    public void run() 
+    {
         getSimpleLinks(url);
     }
 
-    private void getSimpleLinks(String url) {
+    private void getSimpleLinks(String url) 
+    {
         // ToDo: Implement
         // 1. if url not already visited, visit url with linkHandler
         // 2. get url and Parse Website

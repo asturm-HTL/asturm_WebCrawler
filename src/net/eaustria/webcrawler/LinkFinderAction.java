@@ -30,8 +30,11 @@ public class LinkFinderAction extends RecursiveAction {
      */
     private static final long t0 = System.nanoTime();
 
-    public LinkFinderAction(String url, ILinkHandler cr) {
-        // ToDo: Implement Constructor
+    public LinkFinderAction(String url, ILinkHandler cr) 
+    {
+            // ToDo: Implement Constructor
+        this.url = url;
+        this.cr = cr;
     }
 
     @Override
